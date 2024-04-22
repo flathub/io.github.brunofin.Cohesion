@@ -46,7 +46,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/brunofin/cohesion.git
-        tag: v1.0.4
+        tag: v1.0.5
         dest: main
       - generated-sources.json
       - type: script
