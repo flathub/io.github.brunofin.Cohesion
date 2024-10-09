@@ -20,7 +20,8 @@ finish-args:
   - --talk-name=org.kde.StatusNotifierWatcher
   - --talk-name=com.canonical.indicator.application
   - --talk-name=org.ayatana.indicator.application
-
+  - --talk-name=org.freedesktop.portal.Flatpak
+  
 command: cohesion
 
 modules:
