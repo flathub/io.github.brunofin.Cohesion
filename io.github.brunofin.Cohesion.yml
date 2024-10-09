@@ -32,6 +32,8 @@ modules:
       env:
         XDG_CACHE_HOME: /run/build/cohesion/flatpak-node/cache
         YARN_CACHE_FOLDER: /run/build/cohesion/flatpak-node/yarn-cache
+        npm_config_cache: /run/build/cohesion/flatpak-node/npm-cache
+        npm_config_offline: "true"
     build-commands:
       - yarn install --offline
       - ../flatpak-node/electron-builder-arch-args.sh
