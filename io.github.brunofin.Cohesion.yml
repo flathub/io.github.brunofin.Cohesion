@@ -15,6 +15,9 @@ finish-args:
   - --share=ipc
   - --socket=x11
   - --socket=pulseaudio
+  - --socket=session-bus
+  - --socket=system-bus
+  - --device=dri
   - --share=network
   - --talk-name=org.kde.StatusNotifierWatcher
   - --talk-name=com.canonical.indicator.application
@@ -29,12 +32,11 @@ modules:
     build-options:
       env:
         XDG_CACHE_HOME: /run/build/cohesion/flatpak-node/cache
-        npm_config_cache: /run/build/cohesion/flatpak-node/npm-cache
-        npm_config_offline: "true"
+        YARN_CACHE_FOLDER: /run/build/cohesion/flatpak-node/yarn-cache
     build-commands:
-      - npm install --offline
+      - yarn install --offline
       - ../flatpak-node/electron-builder-arch-args.sh
-      - npm run build -- $ELECTRON_BUILDER_ARCH_ARGS --dir
+      - yarn run build -- $ELECTRON_BUILDER_ARCH_ARGS --dir
       - cp -a build/linux*unpacked /app/cohesion
 
       - install -Dm755 ../run.sh /app/bin/cohesion
@@ -46,7 +48,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/brunofin/cohesion.git
-        tag: v1.0.7
+        tag: v1.0.8
         dest: main
       - generated-sources.json
       - type: script
