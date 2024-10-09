@@ -20,6 +20,7 @@ finish-args:
   - --talk-name=org.kde.StatusNotifierWatcher
   - --talk-name=com.canonical.indicator.application
   - --talk-name=org.ayatana.indicator.application
+  - --filesystem=xdg-documents
   
 command: cohesion
 
