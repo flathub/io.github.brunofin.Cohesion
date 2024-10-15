@@ -31,13 +31,12 @@ modules:
     build-options:
       env:
         XDG_CACHE_HOME: /run/build/cohesion/flatpak-node/cache
-        YARN_CACHE_FOLDER: /run/build/cohesion/flatpak-node/yarn-cache
         npm_config_cache: /run/build/cohesion/flatpak-node/npm-cache
         npm_config_offline: "true"
     build-commands:
-      - yarn install --offline
+      - npm install --offline
       - ../flatpak-node/electron-builder-arch-args.sh
-      - yarn run build -- $ELECTRON_BUILDER_ARCH_ARGS --dir
+      - npm run build -- $ELECTRON_BUILDER_ARCH_ARGS --dir
       - cp -a build/linux*unpacked /app/cohesion
 
       - install -Dm755 ../run.sh /app/bin/cohesion
