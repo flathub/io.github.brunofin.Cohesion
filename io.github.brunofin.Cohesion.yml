@@ -15,11 +15,13 @@ finish-args:
   - --share=ipc
   - --socket=x11
   - --socket=pulseaudio
+  - --device=dri
   - --share=network
   - --talk-name=org.kde.StatusNotifierWatcher
   - --talk-name=com.canonical.indicator.application
   - --talk-name=org.ayatana.indicator.application
-
+  - --filesystem=xdg-documents
+  
 command: cohesion
 
 modules:
@@ -46,7 +48,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/brunofin/cohesion.git
-        tag: v1.0.7
+        tag: v1.0.8
         dest: main
       - generated-sources.json
       - type: script
