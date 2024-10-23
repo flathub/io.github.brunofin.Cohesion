@@ -34,9 +34,6 @@ modules:
         npm_config_cache: /run/build/cohesion/flatpak-node/npm-cache
         npm_config_offline: "true"
     build-commands:
-      - ls -las /run/build/cohesion/flatpak-node/cache/electron
-      - ls -las /run/build/cohesion/flatpak-node/npm-cache/_cacache/content-v2
-      - ls -las /run/build/cohesion/flatpak-node/npm-cache/_cacache/content-v2/sha1/b5/24
       - npm install --offline
       - ../flatpak-node/electron-builder-arch-args.sh
       - npm run build -- $ELECTRON_BUILDER_ARCH_ARGS --dir
