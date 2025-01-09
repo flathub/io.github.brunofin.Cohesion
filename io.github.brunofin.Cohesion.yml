@@ -42,9 +42,27 @@ modules:
       - install -Dm755 ../run.sh /app/bin/cohesion
       - install -Dm644 data/io.github.brunofin.Cohesion.appdata.xml -t /app/share/metainfo/
       - install -Dm644 data/io.github.brunofin.Cohesion.desktop -t /app/share/applications/
+      
+      # color icons
       - install -Dm644 data/icons/hicolor/scalable/apps/io.github.brunofin.Cohesion.svg -t /app/share/icons/hicolor/scalable/apps/
+      - install -Dm644 data/icons/hicolor/scalable/apps/io.github.brunofin.Cohesion-unread.svg -t /app/share/icons/hicolor/scalable/apps/
+      
+      - install -Dm644 data/icons/hicolor/128x128/apps/io.github.brunofin.Cohesion.png -t /app/share/icons/hicolor/512x512/apps/
+      - install -Dm644 data/icons/hicolor/128x128/apps/io.github.brunofin.Cohesion-unread.png -t /app/share/icons/hicolor/512x512/apps/
+      
       - install -Dm644 data/icons/hicolor/512x512/apps/io.github.brunofin.Cohesion.png -t /app/share/icons/hicolor/512x512/apps/
       - install -Dm644 data/icons/hicolor/512x512/apps/io.github.brunofin.Cohesion-unread.png -t /app/share/icons/hicolor/512x512/apps/
+      
+      # greyscale icons
+      - install -Dm644 data/icons/hicolor/scalable/apps/io.github.brunofin.Cohesion-greyscale.svg -t /app/share/icons/hicolor/scalable/apps/
+      - install -Dm644 data/icons/hicolor/scalable/apps/io.github.brunofin.Cohesion-greyscale-unread.svg -t /app/share/icons/hicolor/scalable/apps/
+
+      - install -Dm644 data/icons/hicolor/128x128/apps/io.github.brunofin.Cohesion-greyscale.png -t /app/share/icons/hicolor/512x512/apps/
+      - install -Dm644 data/icons/hicolor/128x128/apps/io.github.brunofin.Cohesion-greyscale-unread.png -t /app/share/icons/hicolor/512x512/apps/
+
+      - install -Dm644 data/icons/hicolor/512x512/apps/io.github.brunofin.Cohesion-greyscale.png -t /app/share/icons/hicolor/512x512/apps/
+      - install -Dm644 data/icons/hicolor/512x512/apps/io.github.brunofin.Cohesion-greyscale-unread.png -t /app/share/icons/hicolor/512x512/apps/
+      
     sources:
       - type: git
         url: https://github.com/brunofin/cohesion.git
