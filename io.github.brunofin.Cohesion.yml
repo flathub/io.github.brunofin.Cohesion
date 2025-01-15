@@ -9,7 +9,7 @@ sdk-extensions:
   - org.freedesktop.Sdk.Extension.node20
 
 build-options:
-  append-path: /usr/lib/sdk/node18/bin
+  append-path: /usr/lib/sdk/node20/bin
 
 finish-args:
   - --share=ipc
