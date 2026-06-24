@@ -1,15 +1,15 @@
 app-id: io.github.brunofin.Cohesion
 runtime: org.freedesktop.Platform
-runtime-version: "24.08"
+runtime-version: "25.08"
 sdk: org.freedesktop.Sdk
 
 base: org.electronjs.Electron2.BaseApp
-base-version: "24.08"
+base-version: "25.08"
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.node20
+  - org.freedesktop.Sdk.Extension.node22
 
 build-options:
-  append-path: /usr/lib/sdk/node20/bin
+  append-path: /usr/lib/sdk/node22/bin
 
 finish-args:
   - --share=ipc
@@ -36,10 +36,11 @@ modules:
         XDG_CACHE_HOME: /run/build/cohesion/flatpak-node/cache
         npm_config_cache: /run/build/cohesion/flatpak-node/npm-cache
         npm_config_offline: "true"
+        ELECTRON_SKIP_BINARY_DOWNLOAD: "1"
     build-commands:
       - npm install --offline
       - ../flatpak-node/electron-builder-arch-args.sh
-      - npm run build -- $ELECTRON_BUILDER_ARCH_ARGS --dir
+      - npm run build -- -c.electronDist=../flatpak-node/cache/electron $ELECTRON_BUILDER_ARCH_ARGS --dir
       - cp -a build/linux*unpacked /app/cohesion
 
       - install -Dm755 ../run.sh /app/bin/cohesion
@@ -69,7 +70,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/brunofin/cohesion.git
-        tag: v1.0.9
+        tag: v1.0.10
         dest: main
       - generated-sources.json
       - type: script
