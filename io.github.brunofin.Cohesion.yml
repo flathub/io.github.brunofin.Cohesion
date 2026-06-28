@@ -70,11 +70,11 @@ modules:
     sources:
       - type: git
         url: https://github.com/brunofin/cohesion.git
-        tag: v1.0.10
+        tag: v1.1.0
         dest: main
       - generated-sources.json
       - type: script
         dest-filename: run.sh
         commands:
           - export TMPDIR="${XDG_RUNTIME_DIR}/app/${FLATPAK_ID}" # the tray icon needs this in order to work
-          - zypak-wrapper.sh /app/cohesion/cohesion "$@"
+          - zypak-wrapper.sh /app/cohesion/cohesion --enable-wayland-ime "$@"
